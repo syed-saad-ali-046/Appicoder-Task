@@ -11,7 +11,7 @@ import {
   Container
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from '../asset/logo.webp'
+import logo from "../asset/logo.webp";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,8 +30,8 @@ const Navigation = () => {
   ];
 
   return (
-    <Navbar expand="lg" className="py-3" style={{ backgroundColor: '#E91428' }}>
-      <Container className="d-flex justify-content-between align-items-center">
+    <Navbar expand="lg" className="py-3" style={{ backgroundColor: "#E91428" }}>
+      <Container className="d-flex justify-content-between ">
         <NavbarBrand href="/" className="text-white fw-bold">
           <img
             src={logo}
@@ -39,16 +39,21 @@ const Navigation = () => {
             style={{ height: "40px", marginRight: "10px" }}
           />
         </NavbarBrand>
-        
+
         <NavbarToggler onClick={toggle} className="border-0" />
-        
-        <Collapse isOpen={isOpen} navbar className="justify-content-center">
-          <Nav navbar className="text-center">
+
+        <Collapse isOpen={isOpen} navbar>
+          <Nav
+            navbar
+            className=" d-flex flex-wrap "
+            style={{ whiteSpace: "nowrap" }}
+          >
             {navItems.map((item, index) => (
               <NavItem key={index}>
                 <NavLink
                   href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
                   className="text-white px-3"
+                  style={{ textDecoration: "none", fontWeight: "500" }}
                 >
                   {item}
                 </NavLink>
@@ -59,6 +64,11 @@ const Navigation = () => {
                 outline
                 color="light"
                 className="rounded-pill mt-2 mt-lg-0 ms-lg-3"
+                style={{
+                  whiteSpace: "nowrap",
+                  padding: "0.5rem 1rem",
+                  fontWeight: "600",
+                }}
               >
                 +1 (800) 826-8018
               </Button>

@@ -46,7 +46,7 @@ const HeroSlider = () => {
                                 alt="Mobile App"
                                 className="img-fluid"
                                 style={{
-                                    maxHeight: '600px',
+                                    maxHeight: '500px',
                                     objectFit: 'contain',
                                 }}
                             />
